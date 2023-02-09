@@ -1,0 +1,92 @@
+{% extends "bootstrap/base.html" %}
+
+<!-- Styles -->
+{% block styles %}
+{{ super() }}
+<!-- Bootstrap core CSS -->
+<link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="{{ url_for('static', filename='vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+<link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+<!-- Custom styles for this template -->
+<link href="{{ url_for('static', filename='css/clean-blog.min.css')}}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+{% endblock %}
+
+<!-- meta -->
+{% block metas %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+{% endblock %}
+
+<!-- Title -->
+{% block title %}Thirteen Port{% endblock %}
+
+<!-- Header -->
+<!-- Navbar -->
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+    <a class="navbar-brand" href="#profile">13</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="#skills">Skills <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#projects">Projects</a>
+            <a class="nav-item nav-link" href="#contact">See Me</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+<!-- Content -->
+{% block content %}
+
+<div class="container-fluid py-0">
+    <div class="row justify-content-center flex-fill">
+        <!-- Profile Section -->
+        <div id="profile" class="container-fluid col-lg-6 intro d-flex justify-content-center">
+            <h2>Thirteen</h2>
+        </div>
+        <!-- Skill Section -->
+        <div id="skills" class="container-fluid col-lg-6 skill d-flex justify-content-center">
+            <h3>Skills</h3>
+            <ul>
+                {% for skill in details.skills %}
+                    <li>{{skill}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Project Section -->
+<div id="projects" class="container-fluid d-flex justify-content-center project">
+    <h3>Projects</h3>
+    <ul>
+        {% for project in details.projects %}
+            <li><a href="{{project['weblink']}}">{{project['name']}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<!-- Contact Section -->
+<div id="contact" class="container-fluid d-flex justify-content-center see-me">
+    <h3>See Me</h3>
+    <ul>
+        {% for contact in details.contacts %}
+        <li><a href="{{contact['weblink']}}">{{contact['name']}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock %}

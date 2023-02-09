@@ -1,0 +1,52 @@
+.page-content{
+    background-color: #160740;
+}
+
+.navbar-brand {
+    font-size: 3rem;
+    padding-left: 12rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link{
+    padding-right: 8rem;
+}
+
+nav{
+    margin-bottom: 0px;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+
+.project {
+    background-color: darkslategrey;
+}
+
+.skill{
+    background-color: mediumseagreen;
+}
+
+.intro{
+    background-color: dimgrey;
+}
+
+.see-me{
+    background-color: midnightblue;
+}
+
+.container-fluid{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+.container{
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+}
+
+.carrier-block{
+    padding: 0px;
+}
