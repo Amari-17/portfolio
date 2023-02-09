@@ -14,6 +14,3 @@ detail = DetailCollector()
 @app.route("/home")
 def home():
     return render_template('index.html',details = detail)
-
-if __name__ == "__main__":
-    app.run()
